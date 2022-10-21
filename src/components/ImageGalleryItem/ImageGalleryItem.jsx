@@ -4,7 +4,7 @@ function ImageGalleryItem({ item }) {
     const { webformatURL, tags } = item;
     return (
         <li>
-            <img src={webformatURL} alt={tags} />
+            <img src={webformatURL} alt={tags} width={60} />
         </li>
     );
 }
