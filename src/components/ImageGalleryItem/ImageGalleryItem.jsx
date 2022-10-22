@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import { ItemStyled, ItemImgStyled } from './ImageGalleryItem.styled';
 
 function ImageGalleryItem({ item }) {
     const { webformatURL, tags } = item;
     return (
-        <li>
-            <img src={webformatURL} alt={tags} width={60} />
-        </li>
+        <ItemStyled>
+            <ItemImgStyled src={webformatURL} alt={tags} width={200} />
+        </ItemStyled>
     );
 }
 

@@ -1,8 +1,10 @@
+import { LoadMore } from './Button.styled';
+
 function Button({ onClick }) {
     return (
-        <button type="button" onClick={onClick}>
+        <LoadMore type="button" onClick={onClick}>
             Load more...
-        </button>
+        </LoadMore>
     );
 }
 

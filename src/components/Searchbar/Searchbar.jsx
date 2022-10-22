@@ -1,6 +1,12 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 // import * as Yup from 'yup';
 import PropTypes from 'prop-types';
+import {
+    Header,
+    FormStyled,
+    SearchButton,
+    FieldStyled,
+} from './Searchbar.styled';
 
 // const schema = Yup.object().shape({
 //     input: Yup.string().min(5, 'choose anything').required(),
@@ -13,18 +19,18 @@ function Searchbar({ onSubmit }) {
     };
 
     return (
-        <header className="searchbar">
+        <Header className="searchbar">
             <Formik
                 initialValues={{ search: '' }}
                 // validationSchema={schema}
                 onSubmit={handleSubmit}
             >
-                <Form>
-                    <button type="submit" className="button">
-                        <span className="button-label">Search</span>
-                    </button>
+                <FormStyled>
+                    <SearchButton type="submit" className="button">
+                        <span className="button-label"></span>
+                    </SearchButton>
 
-                    <Field
+                    <FieldStyled
                         className="input"
                         name="search"
                         type="text"
@@ -32,10 +38,10 @@ function Searchbar({ onSubmit }) {
                         autoFocus
                         placeholder="Search images and photos"
                     />
-                    <ErrorMessage name="input" component="div" />
-                </Form>
+                    {/* <ErrorMessage name="input" component="div" /> */}
+                </FormStyled>
             </Formik>
-        </header>
+        </Header>
     );
 }
 
