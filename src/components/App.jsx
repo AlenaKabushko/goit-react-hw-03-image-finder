@@ -17,6 +17,7 @@ export class App extends Component {
     };
 
     onSubmit = async search => {
+        page = 1;
         this.setState({
             loading: true,
         });
