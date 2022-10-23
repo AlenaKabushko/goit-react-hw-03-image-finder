@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Form, Field } from 'formik';
 
 export const Header = styled.header`
-top: 0;
+  top: 0;
   left: 0;
   position: sticky;
   z-index: 1100;
@@ -22,7 +22,7 @@ top: 0;
 `
 
 export const FormStyled = styled(Form)`  
-display: flex;
+  display: flex;
   align-items: center;
   width: 100%;
   max-width: 600px;
@@ -32,11 +32,10 @@ display: flex;
 `
 
 export const SearchButton = styled.button`
-display: inline-block;
+  display: inline-block;
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
@@ -45,24 +44,13 @@ display: inline-block;
   cursor: pointer;
   outline: none;
   
-  &:hover {
-     opacity: 1;
-  }
+    &:hover {
+      opacity: 1;
+    }
 `
 
-export const SearchLable = styled.span`
-position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  clip-path: inset(50%);
-  border: 0;
-`
 export const FieldStyled = styled(Field)`
-display: inline-block;
+  display: inline-block;
   width: 100%;
   font: inherit;
   font-size: 20px;
@@ -71,8 +59,8 @@ display: inline-block;
   padding-left: 4px;
   padding-right: 4px;
 
-  &::placeholder{
-    font: inherit;
-  font-size: 18px;
-  }
-  `
+    &::placeholder{
+      font: inherit;
+    font-size: 18px;
+    }
+`

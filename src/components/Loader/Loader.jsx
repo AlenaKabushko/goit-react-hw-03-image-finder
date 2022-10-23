@@ -6,7 +6,7 @@ function Loader() {
             height={70}
             width={70}
             radius={5}
-            color="#ff5405"
+            color="#3f51b5"
             ariaLabel="ball-triangle-loading"
             wrapperClass={{}}
             wrapperStyle={{ justifyContent: 'center' }}

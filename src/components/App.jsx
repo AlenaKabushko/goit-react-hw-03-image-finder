@@ -5,6 +5,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Loader from './Loader/Loader';
 import RequestImg from './Request/Request';
 import Searchbar from './Searchbar/Searchbar';
+import { Notify } from 'notiflix';
 
 let page = 1;
 export class App extends Component {
@@ -16,14 +17,15 @@ export class App extends Component {
     };
 
     onSubmit = async search => {
-        console.log(search);
-
         this.setState({
             loading: true,
         });
         try {
             const { totalHits, hits } = await RequestImg(search, page);
-            console.log(hits);
+
+            if (hits.length === 0) {
+                Notify.failure('we could not find anything, please try again');
+            }
 
             this.setState({
                 images: hits,
@@ -41,10 +43,7 @@ export class App extends Component {
             loading: true,
         });
         try {
-            console.log(this.state.search);
             const { hits } = await RequestImg(this.state.search, (page += 1));
-            console.log(hits);
-            console.log(page);
 
             this.setState(prevState => ({
                 images: [...prevState.images, ...hits],
@@ -94,5 +93,3 @@ export class App extends Component {
         );
     }
 }
-
-// id, webformatURL, largeImageURL

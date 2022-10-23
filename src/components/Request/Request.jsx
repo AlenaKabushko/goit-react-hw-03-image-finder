@@ -15,7 +15,6 @@ const RequestImg = async (search, page) => {
         },
     });
 
-    console.log(response.data);
     return response.data;
 };
 

@@ -3,7 +3,6 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import { ItemStyled } from './ImageGallery.styled';
 
 function ImageGallery({ images }) {
-    //console.log(images);
     return (
         <ItemStyled>
             {images.map(item => (

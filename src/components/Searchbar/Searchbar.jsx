@@ -1,5 +1,4 @@
 import { Formik } from 'formik';
-// import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import {
     Header,
@@ -7,10 +6,7 @@ import {
     SearchButton,
     FieldStyled,
 } from './Searchbar.styled';
-
-// const schema = Yup.object().shape({
-//     input: Yup.string().min(5, 'choose anything').required(),
-// });
+import { TiZoomOutline } from 'react-icons/ti';
 
 function Searchbar({ onSubmit }) {
     const handleSubmit = values => {
@@ -20,25 +16,20 @@ function Searchbar({ onSubmit }) {
 
     return (
         <Header className="searchbar">
-            <Formik
-                initialValues={{ search: '' }}
-                // validationSchema={schema}
-                onSubmit={handleSubmit}
-            >
+            <Formik initialValues={{ search: '' }} onSubmit={handleSubmit}>
                 <FormStyled>
                     <SearchButton type="submit" className="button">
-                        <span className="button-label"></span>
+                        <TiZoomOutline size={30} />
                     </SearchButton>
 
                     <FieldStyled
                         className="input"
                         name="search"
                         type="text"
-                        // autoComplete="off"
+                        autoComplete="off"
                         autoFocus
                         placeholder="Search images and photos"
                     />
-                    {/* <ErrorMessage name="input" component="div" /> */}
                 </FormStyled>
             </Formik>
         </Header>
